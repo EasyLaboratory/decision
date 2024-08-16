@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="decision"  
+          type="fake_publisher"          
+          name="fake_target_node"    
+          output="screen">   
+    </node>
+</launch>
+
