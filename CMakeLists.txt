@@ -18,7 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES decision
-#  CATKIN_DEPENDS perception_msgs roscpp std_msgs
+ CATKIN_DEPENDS perception_msgs roscpp std_msgs 
 #  DEPENDS system_lib
 )
 
@@ -29,7 +29,9 @@ include_directories(
 )
 
 add_executable(fake_publisher src/fake_publisher.cpp)
-
 target_link_libraries(fake_publisher ${catkin_LIBRARIES})
+
+add_executable(decision src/decision.cpp)
+target_link_libraries(fake_publisher $(catkin_LIBRARIES))
 
 
