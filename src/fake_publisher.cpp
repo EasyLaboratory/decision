@@ -10,8 +10,10 @@ int main(int argc, char **argv)
     ros::Publisher yolo_pub = n.advertise<perception_msgs::Matrix>("/perception_data", 10);
 
     ros::Rate loop_rate(1);  // 设置发布频率为1Hz
-
-    float yolo_test_data = 
+    
+    float test_data[2][7] = {{6.8569e+02, 5.8536e+01, 9.3665e+02, 4.7713e+02, 1.0000e+00, 9.3087e-01, 1.5000e+01},
+                             {1.7559e+02, 1.9192e+01, 3.9366e+02, 4.8310e+02, 2.0000e+00, 9.1360e-01, 1.6000e+01},
+                            };
 
     while (ros::ok())
     {
@@ -21,16 +23,7 @@ int main(int argc, char **argv)
         yolo_data.matrix;  // 矩阵3x3，所以大小为9
 
         // 填充YOLO测试数据 (这里用简单的数字模拟检测数据)
-        yolo_data.data[0] = 1.0;  // 假设第一个检测框的x坐标
-        yolo_data.data[1] = 1.0;  // 假设第一个检测框的y坐标
-        yolo_data.data[2] = 100.0;  // 假设第一个检测框的宽度
-        yolo_data.data[3] = 100.0;  // 假设第一个检测框的高度
-        yolo_data.data[4] = 0.9;  // 假设第一个检测框的置信度
-        yolo_data.data[5] = 0.0;  // 假设第一个检测框的类别（例如：0表示"person"）
-        
-        yolo_data.data[6] = 2.0;  // 第二个检测框的数据...
-        yolo_data.data[7] = 2.0;
-        yolo_data.data[8] = 0.8;
+        yolo_data.matrix={{1,2,3,4},{5,6,7,8}};
 
         // 发布消息
         yolo_pub.publish(yolo_data);
