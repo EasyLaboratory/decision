@@ -31,7 +31,7 @@ include_directories(
 add_executable(fake_publisher src/fake_publisher.cpp)
 target_link_libraries(fake_publisher ${catkin_LIBRARIES})
 
-add_executable(decision src/decision.cpp)
-target_link_libraries(fake_publisher $(catkin_LIBRARIES))
+# add_executable(decision src/decision.cpp)
+# target_link_libraries(fake_publisher $(catkin_LIBRARIES))
 
 
