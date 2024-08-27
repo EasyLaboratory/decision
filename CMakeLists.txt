@@ -24,14 +24,14 @@ catkin_package(
 
 
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
 add_executable(fake_publisher src/fake_publisher.cpp)
 target_link_libraries(fake_publisher ${catkin_LIBRARIES})
 
-# add_executable(decision src/decision.cpp)
-# target_link_libraries(fake_publisher $(catkin_LIBRARIES))
+add_executable(decision src/decision.cpp)
+target_link_libraries(decision ${catkin_LIBRARIES})
 
 
