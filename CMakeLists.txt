@@ -13,6 +13,8 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+find_package(Eigen3 REQUIRED)
+
 
 
 catkin_package(
@@ -26,12 +28,13 @@ catkin_package(
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIR}
 )
 
 add_executable(fake_publisher src/fake_publisher.cpp)
 target_link_libraries(fake_publisher ${catkin_LIBRARIES})
 
 add_executable(decision src/decision.cpp)
-target_link_libraries(decision ${catkin_LIBRARIES})
+target_link_libraries(decision ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES})
 
 

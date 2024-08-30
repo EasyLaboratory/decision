@@ -1,4 +1,5 @@
 #include "ros/ros.h"
+#include"std_msgs/Float32.h"
 #include "perception_msgs/Matrix.h"
 #include<iostream>
 #include<memory>
@@ -24,7 +25,6 @@ class Fake_YOLO{
            while (ros::ok())
            {
             fake_topic_publisher.publish(*matrix);
-            ROS_INFO("HELLO YOLO DATA");
             ros::spinOnce();
             loop_rate.sleep();
            }
