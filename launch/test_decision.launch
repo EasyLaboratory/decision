@@ -4,10 +4,10 @@
           name="fake_target_node"    
           output="screen">   
     </node>
-    <node pkg="decision" 
+    <!-- <node pkg="decision" 
           type="decision" 
           name="decision_node" 
           output="screen">
-    </node>
+    </node> -->
 </launch>
 

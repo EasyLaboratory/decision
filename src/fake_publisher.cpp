@@ -25,6 +25,7 @@ class Fake_YOLO{
            while (ros::ok())
            {
             fake_topic_publisher.publish(*matrix);
+            ROS_INFO("hello world");
             ros::spinOnce();
             loop_rate.sleep();
            }
@@ -53,7 +54,6 @@ int main(int argc, char **argv)
 
     Fake_YOLO fake_yolo(nh,test_data);
     fake_yolo.run();
-
     return 0;
 }
 
